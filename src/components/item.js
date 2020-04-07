@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
-
 
 export default class item extends React.Component {
     getData(data){
@@ -28,4 +28,12 @@ export default class item extends React.Component {
             </ul>
         )
     }
+}
+
+item.propTypes = {
+    data: PropTypes.arrayOf(PropTypes.shape({
+        name: PropTypes.string,
+        id: PropTypes.number,
+        deal: PropTypes.number,
+    })),
 }
